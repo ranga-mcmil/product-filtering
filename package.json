@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "PORT=3003 NODE_ENV=production node server.js",
+    "start": "PORT=3004 NODE_ENV=production node server.js",
     "seed": "tsx ./src/db/seed.ts",
     "lint": "next lint"
   },
