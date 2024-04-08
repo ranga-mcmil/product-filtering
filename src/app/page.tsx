@@ -23,6 +23,7 @@ import axios from "axios";
 import { ChevronDown, Filter } from "lucide-react";
 import { useCallback, useState } from "react";
 import debounce from 'lodash.debounce'
+import EmptyState from "@/components/Products/EmptyState";
 
 const SORT_OPTIONS = [
   { name: "None", value: "none" },
@@ -380,7 +381,7 @@ export default function Home() {
 
           {/* Product grid */}
           <ul className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {products
+            {products && products.length === 0 ? <EmptyState /> : products
               ? products.map((product) => (
                   <Product product={product.metadata!} />
                 ))
